@@ -1,0 +1,818 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="TweenLiteVars,com.greensock.data.TweenLiteVars,autoAlpha,bevelFilter,bezier,bezierThrough,blurFilter,colorMatrixFilter,colorTransform,data,delay,dropShadowFilter,dynamicProps,ease,easeParams,endArray,frameLabel,glowFilter,hexColors,motionBlur,onComplete,onCompleteParams,onInit,onInitParams,onStart,onStartParams,onUpdate,onUpdateParams,orientToBezier,quaternions,scrollRect,setSize,shortRotation,transformAroundCenter,transformAroundPoint,volume,frame,immediateRender,overwrite,removeTint,runBackwards,tint,useFrames,visible,addProp,clone" name="keywords">
+<title>com.greensock.data.TweenLiteVars</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'TweenLiteVars - API Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">API Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/greensock/data/TweenLiteVars.html&amp;com/greensock/data/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;TweenLiteVars</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class TweenLiteVars"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.greensock.data</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public dynamic  class TweenLiteVars</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">TweenLiteVars <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> <a href="VarsCore.html">VarsCore</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../images/inherit-arrow.gif"> flash.utils.Proxy</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../data/TweenMaxVars.html">TweenMaxVars</a></td>
+</tr>
+</table>
+<p></p>
+  There are 2 primary benefits of using a TweenLiteVars instance to define your TweenLite variables:
+  <ol>
+  <li> In most code editors, code hinting will be activated which helps remind you which special properties are available in TweenLite</li>
+  <li> It allows you to code using strict datatyping (although it doesn't force you to).</li>
+  </ol>
+  <b>USAGE:</b><br /><br />
+ 
+ Instead of <code>TweenLite.to(mc, 1, {x:300, tint:0xFF0000, onComplete:myFunction})</code>, you could use this utility like:<br /><br /><code>
+ 
+  var myVars:TweenLiteVars = new TweenLiteVars();<br />
+  myVars.addProp("x", 300); // use addProp() to add any property that doesn't already exist in the TweenLiteVars instance.<br />
+  myVars.tint = 0xFF0000;<br />
+  myVars.onComplete = myFunction;<br />
+  TweenLite.to(mc, 1, myVars);<br /><br /></code>
+  
+  
+ <b>NOTES:</b><br />
+ <ul>
+ <li> This class adds about 13 Kb to your published SWF (including all dependencies).</li>
+ <li> This utility is completely optional. If you prefer the shorter synatax in the regular TweenLite class, feel
+     free to use it. The purpose of this utility is simply to enable code hinting and to allow for strict datatyping.</li>
+ <li> You can reuse a single TweenLiteVars Object for multiple tweens if you want, but be aware that there are a few
+    properties that must be handled in a special way, and once you set them, you cannot remove them. Those properties
+    are: frame, visible, tint, and volume. If you are altering these values, it might be better to avoid reusing a TweenLiteVars</li>
+    Object.
+ </ul>
+ 
+ <b>Copyright 2010, GreenSock. All rights reserved.</b> This work is subject to the terms in <a href="http://www.greensock.com/terms_of_use.html">http://www.greensock.com/terms_of_use.html</a> or for corporate Club GreenSock members, the software agreement that was issued with the corporate membership.
+ 
+ <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#autoAlpha">autoAlpha</a> : Number<div class="summaryTableDescription"> Same as changing the "alpha" property but with the additional feature of toggling the "visible" property to false when alpha is 0.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bevelFilter">bevelFilter</a> : <a href="../data/BevelFilterVars.html">BevelFilterVars</a>
+<div class="summaryTableDescription"> Applies a BevelFilter tween (use the BevelFilterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bezier">bezier</a> : Array<div class="summaryTableDescription"> Array of Objects, one for each "control point" (see documentation on Flash's curveTo() drawing method for more about how control points work).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bezierThrough">bezierThrough</a> : Array<div class="summaryTableDescription"> Identical to bezier except that instead of passing Bezier control point values, you pass values through which the Bezier values should move.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#blurFilter">blurFilter</a> : <a href="../data/BlurFilterVars.html">BlurFilterVars</a>
+<div class="summaryTableDescription"> Applies a BlurFilter tween (use the BlurFilterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#colorMatrixFilter">colorMatrixFilter</a> : <a href="../data/ColorMatrixFilterVars.html">ColorMatrixFilterVars</a>
+<div class="summaryTableDescription"> Applies a ColorMatrixFilter tween (use the ColorMatrixFilterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#colorTransform">colorTransform</a> : <a href="../data/ColorTransformVars.html">ColorTransformVars</a>
+<div class="summaryTableDescription"> Applies a ColorTransform tween (use the ColorTransformVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#data">data</a> : *<div class="summaryTableDescription"> Any data that you'd like associated with your tween.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#delay">delay</a> : Number<div class="summaryTableDescription"> The number of seconds (or frames for frames-based tweens) to delay before the tween begins.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dropShadowFilter">dropShadowFilter</a> : <a href="../data/DropShadowFilterVars.html">DropShadowFilterVars</a>
+<div class="summaryTableDescription"> Applies a DropShadowFilter tween (use the DropShadowFilterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dynamicProps">dynamicProps</a> : Object<div class="summaryTableDescription"> Allows you to associate a function with a property so that every time the tween is updated, it calls that function to get the end value for the associated property.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ease">ease</a> : Function<div class="summaryTableDescription"> An easing function (i.e.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#easeParams">easeParams</a> : Array<div class="summaryTableDescription"> An Array of extra parameter values to feed the easing equation (beyond the standard 4).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#endArray">endArray</a> : Array<div class="summaryTableDescription"> An Array containing numeric end values of the target Array.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#frame">frame</a> : int<div class="summaryTableDescription"> Tweens a MovieClip to a particular frame.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#frameLabel">frameLabel</a> : String<div class="summaryTableDescription"> Tweens a MovieClip to a particular frame.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#glowFilter">glowFilter</a> : <a href="../data/GlowFilterVars.html">GlowFilterVars</a>
+<div class="summaryTableDescription"> Applies a GlowFilter tween (use the GlowFilterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#hexColors">hexColors</a> : Object<div class="summaryTableDescription"> Although hex colors are technically numbers, if you try to tween them conventionally, you'll notice that they don't tween smoothly.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#immediateRender">immediateRender</a> : Boolean<div class="summaryTableDescription"> Normally, zero-duration tweens render immediately and all other tweens begin rendering on the very next frame after they are instantiated, but immediateRender allows you to override that behavior if you prefer.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#motionBlur">motionBlur</a> : Object<div class="summaryTableDescription"> Applies a motionBlur tween.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onComplete">onComplete</a> : Function<div class="summaryTableDescription"> A function to call when the tween has completed.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onCompleteParams">onCompleteParams</a> : Array<div class="summaryTableDescription"> An Array of parameters to pass the onComplete function </div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onInit">onInit</a> : Function<div class="summaryTableDescription"> A function that should be called just before the tween inits (renders for the first time).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onInitParams">onInitParams</a> : Array<div class="summaryTableDescription"> An Array of parameters to pass the onInit function.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onStart">onStart</a> : Function<div class="summaryTableDescription"> A function that should be called when the tween begins (when its currentTime is at 0 and changes to some other value which can happen more than once if the tween is restarted multiple times).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onStartParams">onStartParams</a> : Array<div class="summaryTableDescription"> An Array of parameters to pass the onStart function.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onUpdate">onUpdate</a> : Function<div class="summaryTableDescription"> A function to call whenever the tweening values are updated (on every frame during the time the tween is active).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#onUpdateParams">onUpdateParams</a> : Array<div class="summaryTableDescription"> An Array of parameters to pass the onUpdate function </div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#orientToBezier">orientToBezier</a> : Array<div class="summaryTableDescription">
+   A common effect that designers/developers want is for a MovieClip/Sprite to orient itself in the direction of a Bezier path (alter its rotation).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#overwrite">overwrite</a> : int<div class="summaryTableDescription"> NONE = 0, ALL_IMMEDIATE = 1, AUTO = 2, CONCURRENT = 3, ALL_ONSTART = 4, PREEXISTING = 5 (2 through 5 are only available with the optional OverwriteManager add-on class which must be initted once for TweenLite, like OverwriteManager.init().</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#quaternions">quaternions</a> : Object<div class="summaryTableDescription"> An object with properties that correspond to the quaternion properties of the target object.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#removeTint">removeTint</a> : Boolean<div class="summaryTableDescription"> To remove the tint from a DisplayObject, set removeTint to true.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#runBackwards">runBackwards</a> : Boolean<div class="summaryTableDescription"> When true, the tween will flip the start and end values which is exactly what TweenLite.from() does.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scrollRect">scrollRect</a> : Object<div class="summaryTableDescription"> Tweens the scrollRect property of any DisplayObject; you can define any of the following properties in the object: left, right, top, bottom, x, y, width, height.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#setSize">setSize</a> : Object<div class="summaryTableDescription"> An object containing a "width" and/or "height" property which will be tweened over time and applied using setSize() on every frame during the course of the tween.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#shortRotation">shortRotation</a> : Object<div class="summaryTableDescription"> To tween any rotation property (even multiple properties) of the target object in the shortest direction, use shortRotation.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tint">tint</a> : uint<div class="summaryTableDescription"> To change a DisplayObject's tint, set this to the hex value of the color you'd like the DisplayObject to end up at(or begin at if you're using TweenLite.from()).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#transformAroundCenter">transformAroundCenter</a> : <a href="../data/TransformAroundCenterVars.html">TransformAroundCenterVars</a>
+<div class="summaryTableDescription"> Applies a transformAroundCenter tween (use the TransformAroundCenterVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#transformAroundPoint">transformAroundPoint</a> : <a href="../data/TransformAroundPointVars.html">TransformAroundPointVars</a>
+<div class="summaryTableDescription"> Applies a transformAroundPoint tween (use the TransformAroundPointVars class to define the values).</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#useFrames">useFrames</a> : Boolean<div class="summaryTableDescription"> If useFrames is set to true, the tweens's timing mode will be based on frames.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#visible">visible</a> : Boolean<div class="summaryTableDescription"> To set a DisplayObject's "visible" property at the end of the tween, use this special property.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#volume">volume</a> : Number<div class="summaryTableDescription"> Changes the volume of any object that has a soundTransform property (MovieClip, SoundChannel, NetStream, etc.) </div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#TweenLiteVars()">TweenLiteVars</a>(vars:Object = null)</div>
+<div class="summaryTableDescription">
+   Constructor
+   </div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#addProp()">addProp</a>(name:String, value:Number, relative:Boolean = false):void</div>
+<div class="summaryTableDescription">
+   Adds a dynamic property for tweening and allows you to set whether the end value is relative or not
+   
+   </div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():<a href="../data/TweenLiteVars.html">TweenLiteVars</a>
+</div>
+<div class="summaryTableDescription"> Clones the TweenLiteVars object.</div>
+</td><td class="summaryTableOwnerCol">TweenLiteVars</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedProtectedMethod" id="hideInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(false,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Protected Methods</a>
+</div>
+<div class="showInheritedProtectedMethod" id="showInheritedProtectedMethod">
+<a onclick="javascript:setInheritedVisible(true,'ProtectedMethod');" href="#protectedMethodSummary" class="showHideLink"><img src="../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Protected Methods</a>
+</div>
+</div>
+<table id="summaryTableProtectedMethod" class="summaryTable hideInheritedProtectedMethod" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="VarsCore.html#copyPropsTo()">copyPropsTo</a>(vars:<a href="../data/VarsCore.html">VarsCore</a>):<a href="../data/VarsCore.html">VarsCore</a>
+</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="VarsCore.html">VarsCore</a></td>
+</tr>
+<tr class="hideInheritedProtectedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="VarsCore.html#hasProperty()">hasProperty</a>(name:*):Boolean</div>
+<div class="summaryTableDescription"></div>
+</td><td class="summaryTableOwnerCol"><a href="VarsCore.html">VarsCore</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="autoAlpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">autoAlpha</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var autoAlpha:Number</code><p> Same as changing the "alpha" property but with the additional feature of toggling the "visible" property to false when alpha is 0. </p></div>
+<a name="bevelFilter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bevelFilter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var bevelFilter:<a href="../data/BevelFilterVars.html">BevelFilterVars</a></code><p> Applies a BevelFilter tween (use the BevelFilterVars class to define the values). </p></div>
+<a name="bezier"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bezier</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var bezier:Array</code><p> Array of Objects, one for each "control point" (see documentation on Flash's curveTo() drawing method for more about how control points work). In this example, let's say the control point would be at x/y coordinates 250,50. Just make sure your my_mc is at coordinates 0,0 and then do: TweenLite.to(my_mc, 3, {bezier:[{x:250, y:50}, {x:500, y:0}]}); </p></div>
+<a name="bezierThrough"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bezierThrough</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var bezierThrough:Array</code><p> Identical to bezier except that instead of passing Bezier control point values, you pass values through which the Bezier values should move. This can be more intuitive than using control points. </p></div>
+<a name="blurFilter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">blurFilter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var blurFilter:<a href="../data/BlurFilterVars.html">BlurFilterVars</a></code><p> Applies a BlurFilter tween (use the BlurFilterVars class to define the values). </p></div>
+<a name="colorMatrixFilter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">colorMatrixFilter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var colorMatrixFilter:<a href="../data/ColorMatrixFilterVars.html">ColorMatrixFilterVars</a></code><p> Applies a ColorMatrixFilter tween (use the ColorMatrixFilterVars class to define the values). </p></div>
+<a name="colorTransform"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">colorTransform</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var colorTransform:<a href="../data/ColorTransformVars.html">ColorTransformVars</a></code><p> Applies a ColorTransform tween (use the ColorTransformVars class to define the values). </p></div>
+<a name="data"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">data</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var data:*</code><p> Any data that you'd like associated with your tween. </p></div>
+<a name="delay"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">delay</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var delay:Number</code><p> The number of seconds (or frames for frames-based tweens) to delay before the tween begins. </p></div>
+<a name="dropShadowFilter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dropShadowFilter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var dropShadowFilter:<a href="../data/DropShadowFilterVars.html">DropShadowFilterVars</a></code><p> Applies a DropShadowFilter tween (use the DropShadowFilterVars class to define the values). </p></div>
+<a name="dynamicProps"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dynamicProps</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var dynamicProps:Object</code><p> Allows you to associate a function with a property so that every time the tween is updated, it calls that function to get the end value for the associated property. You could, for example, tween an object's x/y coordinates to wherever the mouse is. </p></div>
+<a name="ease"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ease</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var ease:Function</code><p> An easing function (i.e. fl.motion.easing.Elastic.easeOut) The default is Regular.easeOut. </p></div>
+<a name="easeParams"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">easeParams</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var easeParams:Array</code><p> An Array of extra parameter values to feed the easing equation (beyond the standard 4). This can be useful with easing equations like Elastic that accept extra parameters like the amplitude and period. Most easing equations, however, don't require extra parameters so you won't need to pass in any easeParams. </p></div>
+<a name="endArray"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">endArray</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var endArray:Array</code><p> An Array containing numeric end values of the target Array. Keep in mind that the target of the tween must be an Array with at least the same length as the endArray. </p></div>
+<a name="frame"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">frame</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>frame:int</code>&nbsp;&nbsp;[read-write]<p> Tweens a MovieClip to a particular frame. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get frame():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set frame(value:int):void</code>
+<br>
+</div>
+<a name="frameLabel"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">frameLabel</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var frameLabel:String</code><p> Tweens a MovieClip to a particular frame. </p></div>
+<a name="glowFilter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">glowFilter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var glowFilter:<a href="../data/GlowFilterVars.html">GlowFilterVars</a></code><p> Applies a GlowFilter tween (use the GlowFilterVars class to define the values). </p></div>
+<a name="hexColors"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hexColors</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var hexColors:Object</code><p> Although hex colors are technically numbers, if you try to tween them conventionally, you'll notice that they don't tween smoothly. To tween them properly, the red, green, and blue components must be extracted and tweened independently. TweenMax makes it easy. To tween a property of your object that's a hex color to another hex color, use this special hexColors property of TweenMax. It must be an OBJECT with properties named the same as your object's hex color properties. For example, if your my_obj object has a "myHexColor" property that you'd like to tween to red (0xFF0000) over the course of 2 seconds, do: TweenMax.to(my_obj, 2, {hexColors:{myHexColor:0xFF0000}}); You can pass in any number of hexColor properties. </p></div>
+<a name="immediateRender"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">immediateRender</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>immediateRender:Boolean</code>&nbsp;&nbsp;[read-write]<p> Normally, zero-duration tweens render immediately and all other tweens begin rendering on the very next frame after they are instantiated, but immediateRender allows you to override that behavior if you prefer. For example, if you're inserting a zero-duration tween into a timeline, you should set immediateRender:false so that it doesn't render immediately. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get immediateRender():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set immediateRender(value:Boolean):void</code>
+<br>
+</div>
+<a name="motionBlur"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">motionBlur</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var motionBlur:Object</code><p> Applies a motionBlur tween. </p></div>
+<a name="onComplete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onComplete</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onComplete:Function</code><p> A function to call when the tween has completed.  </p></div>
+<a name="onCompleteParams"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onCompleteParams</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onCompleteParams:Array</code><p> An Array of parameters to pass the onComplete function </p></div>
+<a name="onInit"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onInit</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onInit:Function</code><p> A function that should be called just before the tween inits (renders for the first time).
+   Since onInit runs before the start/end values are recorded internally, it is a good place to run
+   code that affects the target's initial position or other tween-related properties. onStart, by
+   contrast, runs AFTER the tween inits and the start/end values are recorded internally. onStart
+   is called every time the tween begins which can happen more than once if the tween is restarted
+   multiple times. </p></div>
+<a name="onInitParams"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onInitParams</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onInitParams:Array</code><p> An Array of parameters to pass the onInit function. </p></div>
+<a name="onStart"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onStart</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onStart:Function</code><p> A function that should be called when the tween begins (when its currentTime is at 0 and changes to some other value which can happen more than once if the tween is restarted multiple times). </p></div>
+<a name="onStartParams"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onStartParams</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onStartParams:Array</code><p> An Array of parameters to pass the onStart function. </p></div>
+<a name="onUpdate"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onUpdate</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onUpdate:Function</code><p> A function to call whenever the tweening values are updated (on every frame during the time the tween is active). </p></div>
+<a name="onUpdateParams"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">onUpdateParams</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var onUpdateParams:Array</code><p> An Array of parameters to pass the onUpdate function </p></div>
+<a name="orientToBezier"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">orientToBezier</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var orientToBezier:Array</code><p>
+   A common effect that designers/developers want is for a MovieClip/Sprite to orient itself in the direction of a Bezier path (alter its rotation). orientToBezier makes it easy. In order to alter a rotation property accurately, TweenLite/Max needs 4 pieces of information:
+   <ol>
+     <li>Position property 1 (typically "x")</li>
+     <li>Position property 2 (typically "y")</li>
+     <li>Rotational property (typically "rotation")</li>
+     <li>Number of degrees to add (optional - makes it easy to orient your MovieClip/Sprite properly)</li>
+   </ol>
+   The orientToBezier property should be an Array containing one Array for each set of these values. For maximum flexibility, you can pass in any number of Arrays inside the container Array, one for each rotational property. This can be convenient when working in 3D because you can rotate on multiple axis. If you're doing a standard 2D x/y tween on a bezier, you can simply pass in a boolean value of true and TweenMax will use a typical setup, [["x", "y", "rotation", 0]]. Hint: Don't forget the container Array (notice the double outer brackets)  
+   </p></div>
+<a name="overwrite"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">overwrite</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>overwrite:int</code>&nbsp;&nbsp;[read-write]<p> NONE = 0, ALL_IMMEDIATE = 1, AUTO = 2, CONCURRENT = 3, ALL_ONSTART = 4, PREEXISTING = 5 (2 through 5 are only available with the optional OverwriteManager add-on class which must be initted once for TweenLite, like OverwriteManager.init(). TweenMax, TimelineLite, and TimelineMax automatically init OverwriteManager. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get overwrite():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set overwrite(value:int):void</code>
+<br>
+</div>
+<a name="quaternions"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">quaternions</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var quaternions:Object</code><p> An object with properties that correspond to the quaternion properties of the target object. For example, if your my3DObject has "orientation" and "childOrientation" properties that contain quaternions, and you'd like to tween them both, you'd do: {orientation:myTargetQuaternion1, childOrientation:myTargetQuaternion2}. Quaternions must have the following properties: x, y, z, and w. </p></div>
+<a name="removeTint"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">removeTint</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>removeTint:Boolean</code>&nbsp;&nbsp;[read-write]<p> To remove the tint from a DisplayObject, set removeTint to true. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get removeTint():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set removeTint(value:Boolean):void</code>
+<br>
+</div>
+<a name="runBackwards"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">runBackwards</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>runBackwards:Boolean</code>&nbsp;&nbsp;[read-write]<p> When true, the tween will flip the start and end values which is exactly what TweenLite.from() does. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get runBackwards():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set runBackwards(value:Boolean):void</code>
+<br>
+</div>
+<a name="scrollRect"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scrollRect</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var scrollRect:Object</code><p> Tweens the scrollRect property of any DisplayObject; you can define any of the following properties in the object: left, right, top, bottom, x, y, width, height. </p></div>
+<a name="setSize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSize</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var setSize:Object</code><p> An object containing a "width" and/or "height" property which will be tweened over time and applied using setSize() on every frame during the course of the tween. </p></div>
+<a name="shortRotation"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">shortRotation</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var shortRotation:Object</code><p> To tween any rotation property (even multiple properties) of the target object in the shortest direction, use shortRotation. For example, if myObject.rotation is currently 170 degrees and you want to tween it to -170 degrees, a normal rotation tween would travel a total of 340 degrees in the counter-clockwise direction, but if you use shortRotation, it would travel 20 degrees in the clockwise direction instead. Pass in an object in with properties that correspond to the rotation values of the target, like {rotation:-170} or {rotationX:-170, rotationY:50} </p></div>
+<a name="tint"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tint</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tint:uint</code>&nbsp;&nbsp;[read-write]<p> To change a DisplayObject's tint, set this to the hex value of the color you'd like the DisplayObject to end up at(or begin at if you're using TweenLite.from()). An example hex value would be 0xFF0000. If you'd like to remove the tint from a DisplayObject, use the removeTint special property. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tint():uint</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tint(value:uint):void</code>
+<br>
+</div>
+<a name="transformAroundCenter"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transformAroundCenter</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var transformAroundCenter:<a href="../data/TransformAroundCenterVars.html">TransformAroundCenterVars</a></code><p> Applies a transformAroundCenter tween (use the TransformAroundCenterVars class to define the values). </p></div>
+<a name="transformAroundPoint"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">transformAroundPoint</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var transformAroundPoint:<a href="../data/TransformAroundPointVars.html">TransformAroundPointVars</a></code><p> Applies a transformAroundPoint tween (use the TransformAroundPointVars class to define the values). </p></div>
+<a name="useFrames"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">useFrames</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>useFrames:Boolean</code>&nbsp;&nbsp;[read-write]<p> If useFrames is set to true, the tweens's timing mode will be based on frames. Otherwise, it will be based on seconds/time. NOTE: a tween's timing mode is always determined by its parent timeline. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get useFrames():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set useFrames(value:Boolean):void</code>
+<br>
+</div>
+<a name="visible"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">visible</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>visible:Boolean</code>&nbsp;&nbsp;[read-write]<p> To set a DisplayObject's "visible" property at the end of the tween, use this special property. </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get visible():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set visible(value:Boolean):void</code>
+<br>
+</div>
+<a name="volume"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">volume</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var volume:Number</code><p> Changes the volume of any object that has a soundTransform property (MovieClip, SoundChannel, NetStream, etc.) </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="TweenLiteVars()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">TweenLiteVars</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function TweenLiteVars(vars:Object = null)</code><p>
+   Constructor
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">vars</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; An Object containing properties that correspond to the properties you'd like to add to this TweenLiteVars Object. For example, TweenLiteVars({x:300, onComplete:myFunction})
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="addProp()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">addProp</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function addProp(name:String, value:Number, relative:Boolean = false):void</code><p>
+   Adds a dynamic property for tweening and allows you to set whether the end value is relative or not
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; Property name
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Number</code> &mdash; Numeric end value (or beginning value for from() calls)
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">relative</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If true, the value will be relative to the target's current value. For example, if my_mc.x is currently 300 and you do addProp("x", 200, true), the end value will be 500.
+   </td>
+</tr>
+</table>
+</div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function clone():<a href="../data/TweenLiteVars.html">TweenLiteVars</a></code><p> Clones the TweenLiteVars object. </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../data/TweenLiteVars.html">TweenLiteVars</a></code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->
